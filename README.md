@@ -20,27 +20,65 @@ Designed for high-throughput environments where **constant memory usage** (O(1))
 
 This library adheres to a **Strict Layered Architecture** to separate concerns and ensure reliability.
 
+### 1. High-Level Architecture
+The library uses Composition to manage state and layers effectively.
+
 ```mermaid
-graph TD
-    User["User Application"] -->|writeNextStrings()| Orch[Orchestration Layer]
+classDiagram
+    direction TB
+    class UserApplication {
+        +Uses S3CsvWriter
+    }
     
-    subgraph "S3CsvWriter (Orchestration & Format)"
-        Orch -->|Manage Splits & State| SplitLogic{Row Threshold?}
-        SplitLogic -->|No| CSV[Format Layer (OpenCSV)]
-        SplitLogic -->|Yes| Rotate[Rotate File / ZipEntry]
-        Rotate --> CSV
-        
-        CSV -->|Format Data| BOM[BOM Injector]
-    end
+    class S3CsvWriter {
+        <<Orchestration>>
+        -CSVWriter csvWriter
+        -AbstractS3Writer currentS3Writer
+        +addFile()
+        +writeNextStrings()
+    }
     
-    subgraph "AbstractS3Writer (Streaming & Storage)"
-        BOM -->|Bytes| Buffer[In-Memory Buffer (5MB)]
-        Buffer -->|Full?| S3Upload[S3 Multipart Upload]
-        
-        S3Upload -->|Upload Part 1| S3Bucket[(AWS S3)]
-        S3Upload -->|Upload Part N| S3Bucket
-        S3Upload -->|Complete| S3Bucket
-    end
+    class AbstractS3Writer {
+        <<Streaming>>
+        -ByteBuffer buffer
+        -S3Client client
+        #flushBuffer()
+    }
+    
+    class S3Client {
+        <<AWS SDK>>
+    }
+
+    UserApplication --> S3CsvWriter : Calls API
+    S3CsvWriter *-- AbstractS3Writer : Composes (1 per split)
+    S3CsvWriter --> S3Client : Uses
+    AbstractS3Writer --> S3Client : Uploads Parts
+```
+
+### 2. Streaming Data Workflow
+The data flows from the user application through the buffers to S3.
+
+```mermaid
+flowchart TD
+    Start([User: writeNextStrings]) --> CheckSplit{Row Limit Reached?}
+    
+    CheckSplit -- Yes --> Rotate[Rotate File / ZipEntry]
+    Rotate --> WriteRow
+    CheckSplit -- No --> WriteRow[Format CSV & Escape]
+    
+    WriteRow --> StreamSel{Compression Enabled?}
+    
+    StreamSel -- Yes --> Zip[ZipOutputStream]
+    StreamSel -- No --> Direct[Direct Stream]
+    
+    Zip --> Buffer[Internal Buffer 5MB]
+    Direct --> Buffer
+    
+    Buffer --> Full{Buffer Full?}
+    Full -- Yes --> Upload[Multipart Upload Part]
+    Full -- No --> Accumulate[Accumulate Bytes]
+    
+    Upload --> S3[(AWS S3 Bucket)]
 ```
 
 ### Layer Responsibilities
