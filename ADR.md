@@ -1,145 +1,76 @@
-# Architecture Decision Records
+# Architecture Decision Records (ADR) - Master Index
 
-## ADR-001: Virtual Thread Safety
+**Project**: S3 Streaming CSV Writer
+**Version**: 1.0.0-SNAPSHOT
+**Date**: 2026-01-18
 
-**Status**: Accepted
-
-**Context**: Java 21 introduces virtual threads for high-throughput concurrency. However, virtual threads can pin carrier threads when using `synchronized` on long-running I/O operations, degrading performance.
-
-**Decision**: Use `ReentrantLock` instead of `synchronized` for critical sections in `AbstractS3Writer`.
-
-**Consequences**:
-- ✅ Virtual threads avoid carrier thread pinning during S3 uploads
-- ✅ Better performance with Virtual Threads
-- ⚠️ Slightly more verbose code than `synchronized`
-- ⚠️ Developers must remember to use `lock.lock()` and `lock.unlock()` in try-finally blocks
-
-**Rationale**: The library is designed for enterprise-scale data exports where virtual threads will be common. Avoiding carrier thread pinning is critical for throughput.
+This document captures the significant architectural decisions made during the development of the library. It serves as "The Why" behind the code.
 
 ---
 
-## ADR-002: Composition over Inheritance for CSV Writer
+## 1. Core Principles
 
-**Status**: Accepted
+### ADR-001: Strict Layered Architecture
+**Decision**: The library is divided into four strict responsibility layers:
+1.  **Orchestration** (`S3CsvWriter`): Manages state, splitting, and lifecycle.
+2.  **Format** (OpenCSV): Handles CSV standards compliance (quoting, escaping).
+3.  **Streaming** (`AbstractS3Writer`): Manages O(1) byte buffering and "Upload Part" triggers.
+4.  **Storage** (AWS SDK): Low-level API interaction.
 
-**Context**: The CSV writer needs to manage multiple underlying S3 writers (for file splitting in non-ZIP mode) and wrap S3 streams with `ZipOutputStream` (for ZIP mode).
+**Rationale**: Separation of concerns allows isolated testing of Format logic (Mocking storage) and Storage logic (Mocking format).
 
-**Decision**: `S3CsvWriter` will use composition, containing `AbstractS3Writer` instances, rather than extending it.
+### ADR-002: Constant Memory (O(1)) Strategy
+**Decision**: No dynamic resizing buffers (`ByteArrayOutputStream`) are allowed. We use a fixed `ByteBuffer` (default 5MB).
+**Rationale**: Essential for running in memory-constrained environments (Lambda/K8s) where large datasets (GBs) would otherwise cause OutOfMemoryErrors.
 
-**Consequences**:
-- ✅ CSV writer can manage multiple S3Writers for file splitting
-- ✅ Flexible wrapping of S3 streams with ZIP/format-specific streams
-- ✅ Clearer separation of Storage vs. Format concerns
-- ⚠️ Requires delegation methods to expose S3Writer interface
-
-**Rationale**: Inheritance would make multi-writer scenarios (file splitting) and stream wrapping (ZIP) extremely difficult. Composition provides the flexibility needed for complex scenarios.
-
----
-
-## ADR-003: No Temporary Files
-
-**Status**: Accepted
-
-**Context**: Streaming large datasets requires either temporary files or in-memory buffering.
-
-**Decision**: All streaming uses in-memory buffers that flush to S3 multipart upload parts. No temporary files will be created.
-
-**Consequences**:
-- ✅ Satisfies "no temporary files" constraint
-- ✅ Constant memory usage (buffer size is fixed at 5MB default)
-- ✅ Simpler failure recovery (just abort multipart upload)
-- ✅ Works in containerized environments without disk access
-- ⚠️ Requires proper buffer size tuning for performance
-
-**Rationale**: Temporary files add complexity (cleanup, disk space, permissions) and violate the project's explicit constraints.
+### ADR-003: No Temporary Files
+**Decision**: Zero reliance on local disk storage.
+**Rationale**: Many cloud environments (Lambda, Fargate) have ephemeral or slow local storage. Streaming directly to S3 allows "Serverless" compatibility.
 
 ---
 
-## ADR-004: Row-Based Splitting Only
+## 2. Security & Reliability
 
-**Status**: Accepted
+### ADR-004: Defensive Path Sanitization
+**Decision**: All user-provided filenames are regex-sanitized (`[^a-zA-Z0-9._-]`). Directory traversal sequences (`../`) are stripped.
+**Rationale**: Prevents malicious actors from writing files outside the intended S3 prefix/folder.
 
-**Context**: File splitting can be based on row count or file size.
-
-**Decision**: File splitting is based solely on row count, not file size.
-
-**Consequences**:
-- ✅ Deterministic splitting behavior
-- ✅ Memory-efficient (no need to buffer to measure bytes)
-- ✅ Simple implementation
-- ⚠️ Users must estimate CSV size based on expected row count
-
-**Rationale**: Size-based splitting requires buffering to measure bytes before writing, which conflicts with constant memory usage. Row-based splitting is deterministic and efficient.
+### ADR-005: Fail-Safe Resource Cleanup
+**Decision**: Any exception during the write process triggers an implicit `abort()` call on the S3 Multipart Upload.
+**Rationale**: S3 charges for incomplete multipart upload storage. Automatic cleanup prevents "Zombie Parts" and unexpected billing.
 
 ---
 
-## ADR-005: UTF-8 BOM Per CSV File
+## 3. Technology Stack
 
-**Status**: Accepted
+### ADR-006: Java 21 & Virtual Threads
+**Decision**: Target Java 21+. Use `ReentrantLock` instead of `synchronized` for I/O critical sections.
+**Rationale**: Virtual Threads (Project Loom) provide high throughput for I/O-bound tasks. `synchronized` can pin the carrier thread; explicit locks do not.
 
-**Context**: UTF-8 BOM (Byte Order Mark) helps Excel and other tools correctly identify file encoding.
-
-**Decision**: When `withBom=true`, the BOM is written once per CSV file:
-- Single file: BOM written at the start
-- Multi-file ZIP: BOM written at the start of each ZIP entry
-
-**Consequences**:
-- ✅ Correct Excel compatibility per file
-- ✅ BOM is not duplicated mid-file during splitting
-- ✅ Clear semantics: one BOM per logical file
-
-**Rationale**: BOM is a file-level marker, not a stream-level marker. Each logical CSV file should have its own BOM.
+### ADR-007: OpenCSV 5.9
+**Decision**: Use OpenCSV for the CSV formatting engine.
+**Rationale**: Reinventing CSV parsing/writing is error-prone (RFC 4180 compliance). OpenCSV is the battle-tested industry standard.
 
 ---
 
-## ADR-006: Centralized Dependency Management
+## 4. Implementation Details
 
-**Status**: Accepted
+### ADR-008: Composition over Inheritance
+**Decision**: `S3CsvWriter` *contains* an `AbstractS3Writer`, it does not *extend* it.
+**Rationale**: A single CSV logical stream might need multiple physical S3 streams (due to file splitting). Composition allows swapping the underlying writer at runtime seamlessly.
 
-**Context**: Multi-module Maven projects can have version conflicts if dependencies are managed inconsistently.
-
-**Decision**: All dependency versions are defined in the parent POM's `<properties>` section and managed in `<dependencyManagement>`.
-
-**Consequences**:
-- ✅ Consistent versions across all modules
-- ✅ Single source of truth for dependency versions
-- ✅ Easier upgrades (change version in one place)
-- ✅ Follows Maven best practices
-
-**Rationale**: This is a Staff Engineer standard for multi-module projects and prevents version conflicts.
+### ADR-009: Row-Based Splitting
+**Decision**: File splitting is triggered by **Row Count**, not Byte Size.
+**Rationale**: Byte-size splitting requires buffering entire rows to measure them, conflicting with the O(1) memory goal. Row counting is efficient and deterministic.
 
 ---
 
-## ADR-007: SLF4J for Logging
+## 5. Testing Strategy
 
-**Status**: Accepted
-
-**Context**: The library needs logging for observability and debugging.
-
-**Decision**: Use SLF4J API for logging. Concrete implementation (Logback, Log4j2) is left to the consuming application.
-
-**Consequences**:
-- ✅ Library remains logging-implementation-agnostic
-- ✅ Consuming applications can choose their preferred logging framework
-- ✅ SLF4J is the industry standard facade
-- ✅ Logback is used only for tests
-
-**Rationale**: Libraries should never force a logging implementation on consumers. SLF4J provides the abstraction layer.
+### ADR-010: Comprehensive Scenario Testing
+**Decision**: Testing must cover cross-layer failures (e.g., specific S3 errors occurring mid-CSV-write).
+**Rationale**: Unit tests alone miss integration bugs. We simulate Storage failures to verify Orchestration recovery logic.
 
 ---
 
-## ADR-008: Builder Pattern for Public API
-
-**Status**: Accepted
-
-**Context**: The CSV writer has many optional configuration parameters.
-
-**Decision**: Use a Builder pattern for `S3CsvWriter` construction, backed by `S3WriterConfig`.
-
-**Consequences**:
-- ✅ Fluent, readable API
-- ✅ Optional parameters with sensible defaults
-- ✅ Type-safe construction
-- ⚠️ Slightly more boilerplate than simple constructors
-
-**Rationale**: Builder pattern is the cleanest way to handle multiple optional parameters and provides excellent readability for library consumers.
+**Status**: All decisions are **ACCEPTED** and **IMPLEMENTED**.
