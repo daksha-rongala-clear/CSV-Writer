@@ -3,6 +3,7 @@ package com.csvwriter.s3.csv;
 import com.csvwriter.s3.core.AbstractS3Writer;
 import com.csvwriter.s3.core.S3Writer;
 import com.csvwriter.s3.core.S3WriterConfig;
+import com.csvwriter.s3.core.exception.S3WriterException;
 import com.csvwriter.s3.core.exception.FileProcessingException;
 import com.csvwriter.s3.csv.util.CsvWriterHelper;
 import com.opencsv.CSVWriter;
@@ -119,14 +120,20 @@ public class S3CsvWriter implements S3Writer {
             throw new IllegalStateException("Writer is closed");
         }
 
-        // Check if we need to split to a new file
-        if (shouldSplitFile()) {
-            splitToNewFile();
-        }
+        try {
+            // Check if we need to split to a new file
+            if (shouldSplitFile()) {
+                splitToNewFile();
+            }
 
-        // Write the row
-        csvWriter.writeNext(values);
-        currentRowCount++;
+            // Write the row
+            csvWriter.writeNext(values);
+            currentRowCount++;
+        } catch (S3WriterException e) {
+            throw new FileProcessingException("Failed to write CSV row", e);
+        } catch (Exception e) {
+            throw new FileProcessingException("Unexpected error during CSV write", e);
+        }
     }
 
     /**
@@ -230,37 +237,46 @@ public class S3CsvWriter implements S3Writer {
      * Splits to a new file when maxLinesPerFile is reached.
      */
     private void splitToNewFile() throws IOException {
-        log.info("Splitting to new file: current rows = {}, max = {}", currentRowCount, config.getMaxLinesPerFile());
+        try {
+            log.info("Splitting to new file: current rows = {}, max = {}", currentRowCount,
+                    config.getMaxLinesPerFile());
 
-        // Close current CSV writer and ZIP entry if applicable
-        if (csvWriter != null) {
-            csvWriter.flush();
-            csvWriter.close();
+            // Flush CSV writer but DO NOT close it (it closes underlying ZIP stream)
+            if (csvWriter != null) {
+                csvWriter.flush();
+                csvWriter = null; // Decouple from stream
+            }
+
+            if (config.isCompress() && zipOutputStream != null) {
+                zipOutputStream.closeEntry();
+            }
+
+            // If non-compressed, close the S3 writer and create a new one
+            if (!config.isCompress() && currentS3Writer != null) {
+                currentS3Writer.close();
+                currentS3Writer = null;
+            }
+
+            // Increment file number and reset row count
+            currentFileNumber++;
+            currentRowCount = 0;
+
+            // Initialize new file
+            initializeFile();
+        } catch (S3WriterException e) {
+            throw new FileProcessingException("Failed to split CSV file", e);
+        } catch (IOException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new FileProcessingException("Unexpected error during file split", e);
         }
-
-        if (config.isCompress() && zipOutputStream != null) {
-            zipOutputStream.closeEntry();
-        }
-
-        // If non-compressed, close the S3 writer and create a new one
-        if (!config.isCompress() && currentS3Writer != null) {
-            currentS3Writer.close();
-        }
-
-        // Increment file number and reset row count
-        currentFileNumber++;
-        currentRowCount = 0;
-
-        // Initialize new file
-        initializeFile();
     }
 
     /**
      * Closes the current file (called before starting a new file or final close).
      */
     private void closeCurrentFile() throws IOException {
-        // Flush CSV writer (do not close it as it closes the underlying stream which
-        // might be the ZIP stream)
+        // Flush CSV writer (do not close it as it closes the underlying stream)
         if (csvWriter != null) {
             csvWriter.flush();
             csvWriter = null;

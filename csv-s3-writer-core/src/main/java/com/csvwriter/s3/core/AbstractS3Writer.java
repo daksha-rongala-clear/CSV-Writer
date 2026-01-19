@@ -102,19 +102,34 @@ public abstract class AbstractS3Writer implements S3Writer {
             outputStream = new OutputStream() {
                 @Override
                 public void write(int b) throws IOException {
-                    buffer.write(b);
-                    flushIfNeeded();
+                    uploadLock.lock();
+                    try {
+                        buffer.write(b);
+                        flushIfNeededLocked();
+                    } finally {
+                        uploadLock.unlock();
+                    }
                 }
 
                 @Override
                 public void write(byte[] b, int off, int len) throws IOException {
-                    buffer.write(b, off, len);
-                    flushIfNeeded();
+                    uploadLock.lock();
+                    try {
+                        buffer.write(b, off, len);
+                        flushIfNeededLocked();
+                    } finally {
+                        uploadLock.unlock();
+                    }
                 }
 
                 @Override
                 public void flush() throws IOException {
-                    flushBuffer();
+                    uploadLock.lock();
+                    try {
+                        flushIfNeededLocked();
+                    } finally {
+                        uploadLock.unlock();
+                    }
                 }
 
                 @Override
@@ -128,37 +143,38 @@ public abstract class AbstractS3Writer implements S3Writer {
 
     /**
      * Flushes buffer to S3 if size exceeds threshold.
+     * Assumes uploadLock is held.
      */
-    private void flushIfNeeded() throws IOException {
+    private void flushIfNeededLocked() throws IOException {
         if (buffer.size() >= config.getBufferSize()) {
-            flushBuffer();
+            flushBufferLocked();
         }
     }
 
     /**
      * Flushes buffered data to S3 as a multipart upload part.
+     * Assumes uploadLock is held.
      */
-    private void flushBuffer() throws IOException {
+    private void flushBufferLocked() throws IOException {
         if (buffer.size() == 0) {
             return;
         }
 
-        uploadLock.lock();
+        if (aborted) {
+            throw new S3UploadException("Upload has been aborted");
+        }
+
+        byte[] data = buffer.toByteArray();
+        buffer.reset();
+
+        UploadPartRequest uploadPartRequest = UploadPartRequest.builder()
+                .bucket(bucket)
+                .key(key)
+                .uploadId(uploadId)
+                .partNumber(partNumber)
+                .build();
+
         try {
-            if (aborted) {
-                throw new S3UploadException("Upload has been aborted");
-            }
-
-            byte[] data = buffer.toByteArray();
-            buffer.reset();
-
-            UploadPartRequest uploadPartRequest = UploadPartRequest.builder()
-                    .bucket(bucket)
-                    .key(key)
-                    .uploadId(uploadId)
-                    .partNumber(partNumber)
-                    .build();
-
             UploadPartResponse response = s3Client.uploadPart(
                     uploadPartRequest,
                     RequestBody.fromBytes(data));
@@ -171,18 +187,22 @@ public abstract class AbstractS3Writer implements S3Writer {
             completedParts.add(part);
             partNumber++;
 
-            log.debug("Uploaded part {}: bucket={}, key={}, size={} bytes", partNumber - 1, bucket, key, data.length);
+            log.info("Successfully uploaded part {}: bucket={}, key={}, size={} bytes", part.partNumber(), bucket, key,
+                    data.length);
         } catch (Exception e) {
             log.error("Failed to upload part to S3: bucket={}, key={}, partNumber={}", bucket, key, partNumber, e);
             throw new S3UploadException("Failed to upload part to S3", e);
-        } finally {
-            uploadLock.unlock();
         }
     }
 
     @Override
     public void flush() throws IOException {
-        flushBuffer();
+        uploadLock.lock();
+        try {
+            flushIfNeededLocked();
+        } finally {
+            uploadLock.unlock();
+        }
     }
 
     @Override
@@ -194,7 +214,7 @@ public abstract class AbstractS3Writer implements S3Writer {
             }
 
             // Flush any remaining buffered data
-            flushBuffer();
+            flushBufferLocked();
 
             // Complete multipart upload
             completeMultipartUpload();

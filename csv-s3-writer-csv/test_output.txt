@@ -1,0 +1,1150 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.csvwriter.s3:csv-s3-writer-csv >-----------------
+[INFO] Building CSV S3 Writer - CSV Implementation 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ csv-s3-writer-csv ---
+[INFO] skip non existing resourceDirectory /Users/daksha.arya/Documents/CSV Writer Project/csv-s3-writer-csv/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ csv-s3-writer-csv ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ csv-s3-writer-csv ---
+[INFO] skip non existing resourceDirectory /Users/daksha.arya/Documents/CSV Writer Project/csv-s3-writer-csv/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ csv-s3-writer-csv ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ csv-s3-writer-csv ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.csvwriter.s3.csv.S3CsvWriterIntegrationTest
+11:03:52.013 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.041 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.049 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.056 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[])
+11:03:52.059 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket
+
+amz-sdk-invocation-id:ed6c3bb8-1af8-fec5-189f-76a530a84923
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.059 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+5e798bc2c4be213616b0d943a47c350e50d49869d8dc3ae58d2088fe672f387f
+11:03:52.091 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: d7d2c7a0-f566-4e79-9aef-42c958144197, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.092 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: d7d2c7a0-f566-4e79-9aef-42c958144197, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.094 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.095 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.096 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.096 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[])
+11:03:52.096 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket
+
+amz-sdk-invocation-id:8870f016-0f92-a073-4a8b-7d5551a8e637
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.096 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+d9e82afdc2c1915dff9f80310d7af61b57c94e46414ab3efba85c3c11891003e
+11:03:52.100 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 0d1198d6-6831-4f2e-b263-64888a851665, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.100 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 0d1198d6-6831-4f2e-b263-64888a851665, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.109 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.110 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.111 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.111 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0' modified the message with its modifyHttpRequest method.
+11:03:52.112 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=POST, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[uploads])
+11:03:52.112 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: POST
+/integration-test-bucket/data.zip
+uploads=
+amz-sdk-invocation-id:97b0acc4-6917-9b5d-95f1-3661f3a1c1a1
+amz-sdk-request:attempt=1; max=4
+content-length:0
+content-type:binary/octet-stream
+host:localhost:4566
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+11:03:52.113 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+472d9753ead801b841c1c48fe39187e0284da3016d4704fcd2c445341d0a602d
+11:03:52.136 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: a747b973-ceaf-4f9a-9ca1-f13e7f607a6d, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.137 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: a747b973-ceaf-4f9a-9ca1-f13e7f607a6d, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.137 [main] INFO com.csvwriter.s3.core.AbstractS3Writer -- Initiated multipart upload: bucket=integration-test-bucket, key=data.zip, uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+11:03:52.138 [main] DEBUG com.csvwriter.s3.csv.S3CsvWriter -- Created ZIP entry: data.csv
+11:03:52.147 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.149 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.150 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.150 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.151 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/data.zip
+partNumber=1&uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+amz-sdk-invocation-id:e4692219-fd34-7409-236d-60fbc057b998
+amz-sdk-request:attempt=1; max=4
+content-length:211
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:38
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.152 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+ad82a4f7a5fc8161e7f3d2c644a2bfb0b44152b6d03ac07ac28b70fcfcedd81c
+11:03:52.158 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 38 has been reached. Returning EOF.
+11:03:52.158 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 38 has been reached. Returning EOF.
+11:03:52.164 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 9acc4be6-1f7c-4da9-933c-92cd932e3d37, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.164 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 9acc4be6-1f7c-4da9-933c-92cd932e3d37, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.165 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 1: bucket=integration-test-bucket, key=data.zip, size=38 bytes
+11:03:52.165 [main] DEBUG com.csvwriter.s3.csv.S3CsvWriter -- Initialized CSV file: data.zip
+11:03:52.192 [main] INFO com.csvwriter.s3.csv.S3CsvWriter -- Splitting to new file: current rows = 600, max = 600
+11:03:52.193 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.194 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.194 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.194 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.194 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/data.zip
+partNumber=2&uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+amz-sdk-invocation-id:6199438c-b4e4-e7c8-9c23-c1704fe63928
+amz-sdk-request:attempt=1; max=4
+content-length:6240
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:6065
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.195 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+8c59f9adb9b754e249305772f0fcc1de11e1f5a8773a04f0a604f0bdbf02a052
+11:03:52.197 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 6065 has been reached. Returning EOF.
+11:03:52.197 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 6065 has been reached. Returning EOF.
+11:03:52.202 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 0cad5891-bad7-42be-aa11-fac40f8b25e9, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.202 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 0cad5891-bad7-42be-aa11-fac40f8b25e9, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.203 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 2: bucket=integration-test-bucket, key=data.zip, size=6065 bytes
+11:03:52.203 [main] ERROR com.csvwriter.s3.csv.S3CsvWriter -- Failed to initialize CSV file: data.zip
+java.util.zip.ZipException: duplicate entry: data.csv
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:259)
+	at com.csvwriter.s3.csv.S3CsvWriter.initializeCompressedFile(S3CsvWriter.java:199)
+	at com.csvwriter.s3.csv.S3CsvWriter.initializeFile(S3CsvWriter.java:138)
+	at com.csvwriter.s3.csv.S3CsvWriter.splitToNewFile(S3CsvWriter.java:256)
+	at com.csvwriter.s3.csv.S3CsvWriter.writeNextStrings(S3CsvWriter.java:124)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit(S3CsvWriterIntegrationTest.java:129)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+11:03:52.205 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.206 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.206 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.206 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.206 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/data.zip
+partNumber=3&uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+amz-sdk-invocation-id:5899d08d-5d95-4ec1-4354-d7d45d6f443f
+amz-sdk-request:attempt=1; max=4
+content-length:3519
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:3345
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.206 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+9b5e295bf0180789c6b18e91c4e88ddc68ebb40dc6102b88dffbb4182227f34a
+11:03:52.208 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 3345 has been reached. Returning EOF.
+11:03:52.209 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 3345 has been reached. Returning EOF.
+11:03:52.213 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 3125221b-b35f-42d8-b594-2789e0c51c4f, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.213 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 3125221b-b35f-42d8-b594-2789e0c51c4f, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.213 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 3: bucket=integration-test-bucket, key=data.zip, size=3345 bytes
+11:03:52.217 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.218 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.218 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.219 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=POST, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[uploadId])
+11:03:52.219 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 425 has been reached. Returning EOF.
+11:03:52.219 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: POST
+/integration-test-bucket/data.zip
+uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+amz-sdk-invocation-id:f81a189a-d73c-e6c1-e137-148c712e6f1e
+amz-sdk-request:attempt=1; max=4
+content-length:425
+content-type:application/xml
+host:localhost:4566
+x-amz-content-sha256:698983df6f77c7f046f5deea9563a50aaafb83ce91c7924b4078a67dea86dd9c
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date
+698983df6f77c7f046f5deea9563a50aaafb83ce91c7924b4078a67dea86dd9c
+11:03:52.219 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+fa1f874eec512104bf8188bbab0d82cb5faf8d59aecd1e7141b8108e70a63487
+11:03:52.225 [main] DEBUG software.amazon.awssdk.requestId -- Received failed response: 400, Request ID: 3f75a40e-392f-4e86-bb9f-cedd3c1bd49b, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.225 [main] DEBUG software.amazon.awssdk.request -- Received failed response: 400, Request ID: 3f75a40e-392f-4e86-bb9f-cedd3c1bd49b, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.228 [main] ERROR com.csvwriter.s3.core.AbstractS3Writer -- Failed to complete multipart upload: bucket=integration-test-bucket, key=data.zip, uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: 3f75a40e-392f-4e86-bb9f-cedd3c1bd49b, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+	at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+	at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:330)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit(S3CsvWriterIntegrationTest.java:131)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+11:03:52.230 [main] ERROR com.csvwriter.s3.csv.S3CsvWriter -- Error closing S3CsvWriter - currentFile: data.zip, currentFileNumber: 1, currentRowCount: 0
+com.csvwriter.s3.core.exception.S3UploadException: Failed to complete multipart upload
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:215)
+	at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:330)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit(S3CsvWriterIntegrationTest.java:131)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: 3f75a40e-392f-4e86-bb9f-cedd3c1bd49b, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+	at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+	... 72 common frames omitted
+11:03:52.233 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@126be319, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@6c44052e, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@5c371e13, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@530a8454, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@1e34c607, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@5215cd9a, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@36b6964d, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@31198ceb, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@9257031, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@aa5455e, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@282308c3, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@5dda14d0, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1db0ec27, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@3d9fc57a, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@d4ab71a, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@3b4ef7, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@1af05b03, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@5987e932, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@1ad777f, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@5bbbdd4b, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@438bad7c, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@25230246]
+11:03:52.233 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@75201592' modified the message with its modifyRequest method.
+11:03:52.234 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7726e185' modified the message with its modifyHttpRequest method.
+11:03:52.234 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=DELETE, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/data.zip, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[uploadId])
+11:03:52.234 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: DELETE
+/integration-test-bucket/data.zip
+uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+amz-sdk-invocation-id:78740b94-d214-665a-adaa-c3d724d5d9e0
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.234 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+3f4a2f89d42568f048a0e1a01cd0cadd7c41a88579c3ef3df36e1a3d009250e5
+11:03:52.238 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 204, Request ID: f5649588-7dde-49d7-a333-5379742e25bb, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.238 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 204, Request ID: f5649588-7dde-49d7-a333-5379742e25bb, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.239 [main] WARN com.csvwriter.s3.core.AbstractS3Writer -- Aborted multipart upload: bucket=integration-test-bucket, key=data.zip, uploadId=nq87b_AJKC0_DzeGDPXVGlTU0ETESXVvOJT1TQ9VCEI1Z5vyUyf9XRxTwXEZE165-F6GkDqdPh3vICQ1E_u3Ui-bc0O06w3DNxURHdOTtUwVHHlzz0fr41qyZTL2zhj4
+11:03:52.239 [main] WARN com.csvwriter.s3.csv.S3CsvWriter -- S3CsvWriter aborted
+11:03:52.240 [idle-connection-reaper] DEBUG software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper -- Reaper thread: 
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep0(Native Method)
+	at java.base/java.lang.Thread.sleep(Thread.java:509)
+	at software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper$ReaperTask.run(IdleConnectionReaper.java:150)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+11:03:52.240 [idle-connection-reaper] DEBUG software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper -- Shutting down reaper thread.
+11:03:52.249 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.249 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.250 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.250 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[])
+11:03:52.250 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket
+
+amz-sdk-invocation-id:61384892-ba74-0c87-83b9-7212c1ed3587
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.250 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+dd55403fbe9b08c13d42e4201307a578d0104777a3a9c3276a04e8f276b90e9d
+11:03:52.254 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 54387e1e-db26-4ab7-a2b3-a15a297cb1b6, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.254 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 54387e1e-db26-4ab7-a2b3-a15a297cb1b6, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.255 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.255 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.256 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.256 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[])
+11:03:52.256 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket
+
+amz-sdk-invocation-id:c69d246c-9bec-5b07-1abc-9d403b4c686a
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.256 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+9dc401122cb039186200d5a803dd0e1179d6df63c6dabf3c7b92f088724a4f1f
+11:03:52.259 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: cee0276f-3e87-43f2-a14b-7463a652786c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.259 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: cee0276f-3e87-43f2-a14b-7463a652786c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.260 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.261 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.261 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.261 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2' modified the message with its modifyHttpRequest method.
+11:03:52.261 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=POST, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[uploads])
+11:03:52.261 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: POST
+/integration-test-bucket/users.csv
+uploads=
+amz-sdk-invocation-id:24833ed2-cf3f-0b67-0054-c6d2b7c62e20
+amz-sdk-request:attempt=1; max=4
+content-length:0
+content-type:binary/octet-stream
+host:localhost:4566
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+11:03:52.261 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+673e7e68630db6af71133a2dc889559a84b22366785543d99b7de1c885bf176d
+11:03:52.267 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 237ff982-597a-403c-8090-a5cee47815b9, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.267 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 237ff982-597a-403c-8090-a5cee47815b9, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.267 [main] INFO com.csvwriter.s3.core.AbstractS3Writer -- Initiated multipart upload: bucket=integration-test-bucket, key=users.csv, uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+11:03:52.267 [main] DEBUG com.csvwriter.s3.csv.S3CsvWriter -- Created S3 writer for: users.csv
+11:03:52.267 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.268 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.268 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.268 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.268 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/users.csv
+partNumber=1&uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:9e42601c-7699-cfda-d3e8-da49414e538f
+amz-sdk-request:attempt=1; max=4
+content-length:195
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:22
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.268 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+20a5e6519e10103893cd8a0159aa893e09614fe1ab750e5d0dd3c478d3df5c39
+11:03:52.270 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 22 has been reached. Returning EOF.
+11:03:52.270 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 22 has been reached. Returning EOF.
+11:03:52.272 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: e8e293ca-77e8-4dbf-ba0e-1c66d7024b22, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.272 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: e8e293ca-77e8-4dbf-ba0e-1c66d7024b22, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.272 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 1: bucket=integration-test-bucket, key=users.csv, size=22 bytes
+11:03:52.272 [main] DEBUG com.csvwriter.s3.csv.S3CsvWriter -- Initialized CSV file: users.csv
+11:03:52.288 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.288 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.288 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.289 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.289 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/users.csv
+partNumber=2&uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:36f97a82-d519-0731-d7aa-9a57486e1550
+amz-sdk-request:attempt=1; max=4
+content-length:5249336
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:5245562
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.289 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+b95b44b20b3102c0e1d38bee071be57cfdba4fc55eadc4f6ac06d0731977f9c5
+11:03:52.327 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 5245562 has been reached. Returning EOF.
+11:03:52.328 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 5245562 has been reached. Returning EOF.
+11:03:52.345 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 25783410-a955-4c6d-b6a3-23f8bb2c510d, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.345 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 25783410-a955-4c6d-b6a3-23f8bb2c510d, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.345 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 2: bucket=integration-test-bucket, key=users.csv, size=5245562 bytes
+11:03:52.357 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.357 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.358 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.358 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.358 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/users.csv
+partNumber=3&uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:94cdfbab-6252-6f51-82df-6a50e2e0264f
+amz-sdk-request:attempt=1; max=4
+content-length:5247432
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:5243658
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.358 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+2ee5b956de01826abf97a468ddf72106626b809a29b95ecdbb47b7086b1cb672
+11:03:52.427 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 5243658 has been reached. Returning EOF.
+11:03:52.427 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 5243658 has been reached. Returning EOF.
+11:03:52.460 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 33c309fd-6180-414b-be6c-72c70018a273, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.460 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 33c309fd-6180-414b-be6c-72c70018a273, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.460 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 3: bucket=integration-test-bucket, key=users.csv, size=5243658 bytes
+11:03:52.464 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.465 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.465 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.465 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[partNumber, uploadId])
+11:03:52.465 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: PUT
+/integration-test-bucket/users.csv
+partNumber=4&uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:f5d31d73-0f2e-fad1-1d65-0cf6f3e3b57a
+amz-sdk-request:attempt=1; max=4
+content-length:2066086
+content-type:application/octet-stream
+host:localhost:4566
+x-amz-content-sha256:STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+x-amz-date:20260119T053352Z
+x-amz-decoded-content-length:2064560
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length
+STREAMING-AWS4-HMAC-SHA256-PAYLOAD
+11:03:52.465 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+7b9fb44627eaa68d4d9899892faf1123a3e9bfb1b4120684a617cd73aebe8226
+11:03:52.469 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 2064560 has been reached. Returning EOF.
+11:03:52.469 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 2064560 has been reached. Returning EOF.
+11:03:52.487 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 200, Request ID: 54b91580-f917-4842-8763-113965616e70, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.487 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 200, Request ID: 54b91580-f917-4842-8763-113965616e70, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.487 [main] DEBUG com.csvwriter.s3.core.AbstractS3Writer -- Uploaded part 4: bucket=integration-test-bucket, key=users.csv, size=2064560 bytes
+11:03:52.488 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.488 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.488 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.489 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=POST, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, User-Agent], queryParameters=[uploadId])
+11:03:52.489 [main] DEBUG software.amazon.awssdk.core.internal.io.SdkLengthAwareInputStream -- Specified InputStream length of 521 has been reached. Returning EOF.
+11:03:52.489 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: POST
+/integration-test-bucket/users.csv
+uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:323cccc2-cb06-b413-0bdf-8837944619fc
+amz-sdk-request:attempt=1; max=4
+content-length:521
+content-type:application/xml
+host:localhost:4566
+x-amz-content-sha256:108f8c22464c7a0563e0c40a23382f5f9d360e59b3af499ce8034ddb7fc044ed
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-content-sha256;x-amz-date
+108f8c22464c7a0563e0c40a23382f5f9d360e59b3af499ce8034ddb7fc044ed
+11:03:52.489 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+eb8fef6f99a7eec86b9c45f112697b6f6683f6a49ca999fe72e70f8f1d3940f5
+11:03:52.491 [main] DEBUG software.amazon.awssdk.requestId -- Received failed response: 400, Request ID: c60c478e-95ea-4a33-818d-f89a9970362c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.491 [main] DEBUG software.amazon.awssdk.request -- Received failed response: 400, Request ID: c60c478e-95ea-4a33-818d-f89a9970362c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.491 [main] ERROR com.csvwriter.s3.core.AbstractS3Writer -- Failed to complete multipart upload: bucket=integration-test-bucket, key=users.csv, uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: c60c478e-95ea-4a33-818d-f89a9970362c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+	at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+	at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+	at com.csvwriter.s3.csv.S3CsvWriter.closeCurrentFile(S3CsvWriter.java:274)
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:318)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testFullLifecycle_BasicCsv(S3CsvWriterIntegrationTest.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+11:03:52.492 [main] ERROR com.csvwriter.s3.csv.S3CsvWriter -- Error closing S3CsvWriter - currentFile: users.csv, currentFileNumber: 0, currentRowCount: 12000
+com.csvwriter.s3.core.exception.S3UploadException: Failed to complete multipart upload
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:215)
+	at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+	at com.csvwriter.s3.csv.S3CsvWriter.closeCurrentFile(S3CsvWriter.java:274)
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:318)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testFullLifecycle_BasicCsv(S3CsvWriterIntegrationTest.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: c60c478e-95ea-4a33-818d-f89a9970362c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+	at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+	... 73 common frames omitted
+11:03:52.492 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Creating an interceptor chain that will apply interceptors in the following order: [software.amazon.awssdk.core.internal.interceptor.HttpChecksumRequiredInterceptor@31edeac, software.amazon.awssdk.core.internal.interceptor.SyncHttpChecksumInTrailerInterceptor@67d86804, software.amazon.awssdk.core.internal.interceptor.HttpChecksumValidationInterceptor@45bb2aa1, software.amazon.awssdk.core.internal.interceptor.AsyncRequestBodyHttpChecksumTrailerInterceptor@3e84111a, software.amazon.awssdk.core.internal.interceptor.HttpChecksumInHeaderInterceptor@4b1a43d8, software.amazon.awssdk.awscore.interceptor.HelpfulUnknownHostExceptionInterceptor@6fa69af7, software.amazon.awssdk.awscore.eventstream.EventStreamInitialRequestInterceptor@73545b80, software.amazon.awssdk.awscore.interceptor.TraceIdExecutionInterceptor@6d469831, software.amazon.awssdk.services.s3.endpoints.internal.S3ResolveEndpointInterceptor@74db12c2, software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c, software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9, software.amazon.awssdk.services.s3.internal.handlers.PutObjectInterceptor@2776015d, software.amazon.awssdk.services.s3.internal.handlers.CreateBucketInterceptor@b174a73, software.amazon.awssdk.services.s3.internal.handlers.CreateMultipartUploadRequestInterceptor@2e3f79a2, software.amazon.awssdk.services.s3.internal.handlers.EnableChunkedEncodingInterceptor@1460c81d, software.amazon.awssdk.services.s3.internal.handlers.ConfigureSignerInterceptor@38b5f25, software.amazon.awssdk.services.s3.internal.handlers.DecodeUrlEncodedResponseInterceptor@327ed9f5, software.amazon.awssdk.services.s3.internal.handlers.GetBucketPolicyInterceptor@67594471, software.amazon.awssdk.services.s3.internal.handlers.AsyncChecksumValidationInterceptor@756b58a7, software.amazon.awssdk.services.s3.internal.handlers.SyncChecksumValidationInterceptor@2cc04358, software.amazon.awssdk.services.s3.internal.handlers.EnableTrailingChecksumInterceptor@68b58644, software.amazon.awssdk.services.s3.internal.handlers.ExceptionTranslationInterceptor@45e22def, software.amazon.awssdk.services.s3.internal.handlers.GetObjectInterceptor@6ae3fb94, software.amazon.awssdk.services.s3.internal.handlers.CopySourceInterceptor@4417af13]
+11:03:52.493 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3EndpointAuthSchemeInterceptor@2ff15f8c' modified the message with its modifyRequest method.
+11:03:52.493 [main] DEBUG software.amazon.awssdk.core.interceptor.ExecutionInterceptorChain -- Interceptor 'software.amazon.awssdk.services.s3.endpoints.internal.S3RequestSetEndpointInterceptor@7ea899a9' modified the message with its modifyHttpRequest method.
+11:03:52.493 [main] DEBUG software.amazon.awssdk.request -- Sending Request: DefaultSdkHttpFullRequest(httpMethod=DELETE, protocol=http, host=localhost, port=4566, encodedPath=/integration-test-bucket/users.csv, headers=[amz-sdk-invocation-id, User-Agent], queryParameters=[uploadId])
+11:03:52.493 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 Canonical Request: DELETE
+/integration-test-bucket/users.csv
+uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+amz-sdk-invocation-id:d1271a1e-9fb7-cf9f-c400-a8cebee69aba
+amz-sdk-request:attempt=1; max=4
+host:localhost:4566
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20260119T053352Z
+
+amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+11:03:52.493 [main] DEBUG software.amazon.awssdk.auth.signer.Aws4Signer -- AWS4 String to sign: AWS4-HMAC-SHA256
+20260119T053352Z
+20260119/us-east-1/s3/aws4_request
+9bebbebc5672f7ebb439906296a7729b02865c3fa00f460b636805ed64a8b46d
+11:03:52.496 [main] DEBUG software.amazon.awssdk.requestId -- Received successful response: 204, Request ID: abb488b3-5654-4599-904e-ca81b8b30a45, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.496 [main] DEBUG software.amazon.awssdk.request -- Received successful response: 204, Request ID: abb488b3-5654-4599-904e-ca81b8b30a45, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=
+11:03:52.496 [main] WARN com.csvwriter.s3.core.AbstractS3Writer -- Aborted multipart upload: bucket=integration-test-bucket, key=users.csv, uploadId=Mgnit53p7tobIvcGRUcgibr7nE4mNC_5tEg32W8hGnIfKKU1s5y3s8xzZXqjCi9t88QDtYQRftMtnfEg0Wsvl75VWXxe3opspovpFvtPsTpH_FfH0vpvC70-7oyqXqch
+11:03:52.496 [main] WARN com.csvwriter.s3.csv.S3CsvWriter -- S3CsvWriter aborted
+11:03:52.497 [idle-connection-reaper] DEBUG software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper -- Reaper thread: 
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep0(Native Method)
+	at java.base/java.lang.Thread.sleep(Thread.java:509)
+	at software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper$ReaperTask.run(IdleConnectionReaper.java:150)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+11:03:52.497 [idle-connection-reaper] DEBUG software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper -- Shutting down reaper thread.
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.764 s <<< FAILURE! -- in com.csvwriter.s3.csv.S3CsvWriterIntegrationTest
+[ERROR] com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit -- Time elapsed: 0.503 s <<< ERROR!
+com.csvwriter.s3.core.exception.FileProcessingException: Failed to initialize CSV file
+	at com.csvwriter.s3.csv.S3CsvWriter.initializeFile(S3CsvWriter.java:170)
+	at com.csvwriter.s3.csv.S3CsvWriter.splitToNewFile(S3CsvWriter.java:256)
+	at com.csvwriter.s3.csv.S3CsvWriter.writeNextStrings(S3CsvWriter.java:124)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit(S3CsvWriterIntegrationTest.java:129)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	Suppressed: com.csvwriter.s3.core.exception.FileProcessingException: Failed to close S3CsvWriter
+		at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:340)
+		at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit(S3CsvWriterIntegrationTest.java:131)
+		... 3 more
+	Caused by: com.csvwriter.s3.core.exception.S3UploadException: Failed to complete multipart upload
+		at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:215)
+		at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+		at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:330)
+		... 4 more
+	Caused by: software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: 3f75a40e-392f-4e86-bb9f-cedd3c1bd49b, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+		at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+		at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+		at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+		at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+		at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+		at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+		at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+		at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+		at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+		at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+		at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+		at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+		at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+		at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+		at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+		at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+		at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+		at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+		at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+		at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+		at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+		at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+		at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+		... 6 more
+Caused by: java.util.zip.ZipException: duplicate entry: data.csv
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:259)
+	at com.csvwriter.s3.csv.S3CsvWriter.initializeCompressedFile(S3CsvWriter.java:199)
+	at com.csvwriter.s3.csv.S3CsvWriter.initializeFile(S3CsvWriter.java:138)
+	... 6 more
+
+[ERROR] com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testFullLifecycle_BasicCsv -- Time elapsed: 0.251 s <<< ERROR!
+com.csvwriter.s3.core.exception.FileProcessingException: Failed to close S3CsvWriter
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:340)
+	at com.csvwriter.s3.csv.S3CsvWriterIntegrationTest.testFullLifecycle_BasicCsv(S3CsvWriterIntegrationTest.java:85)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: com.csvwriter.s3.core.exception.S3UploadException: Failed to complete multipart upload
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:215)
+	at com.csvwriter.s3.core.AbstractS3Writer.close(AbstractS3Writer.java:186)
+	at com.csvwriter.s3.csv.S3CsvWriter.closeCurrentFile(S3CsvWriter.java:274)
+	at com.csvwriter.s3.csv.S3CsvWriter.close(S3CsvWriter.java:318)
+	... 4 more
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: Your proposed upload is smaller than the minimum allowed size (Service: S3, Status Code: 400, Request ID: c60c478e-95ea-4a33-818d-f89a9970362c, Extended Request ID: s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234=)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleErrorResponse(AwsXmlPredicatedResponseHandler.java:156)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handleResponse(AwsXmlPredicatedResponseHandler.java:108)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:85)
+	at software.amazon.awssdk.protocols.xml.internal.unmarshall.AwsXmlPredicatedResponseHandler.handle(AwsXmlPredicatedResponseHandler.java:43)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler$Crc32ValidationResponseHandler.handle(AwsSyncClientHandler.java:95)
+	at software.amazon.awssdk.core.internal.handler.BaseClientHandler.lambda$successTransformationResponseHandler$7(BaseClientHandler.java:270)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:632)
+	at com.csvwriter.s3.core.AbstractS3Writer.completeMultipartUpload(AbstractS3Writer.java:212)
+	... 7 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   S3CsvWriterIntegrationTest.testFullLifecycle_BasicCsv:85 » FileProcessing Failed to close S3CsvWriter
+[ERROR]   S3CsvWriterIntegrationTest.testLifecycle_ZipAndSplit:129 » FileProcessing Failed to initialize CSV file
+[INFO] 
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.801 s
+[INFO] Finished at: 2026-01-19T11:03:52+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project csv-s3-writer-csv: 
+[ERROR] 
+[ERROR] Please refer to /Users/daksha.arya/Documents/CSV Writer Project/csv-s3-writer-csv/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
